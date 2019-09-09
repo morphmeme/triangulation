@@ -1,4 +1,4 @@
-import {Point, Polygon, init_panic_hook} from "../pkg/triangulation";
+import {Point, Polygon, init_panic_hook} from "triangulation";
 
 init_panic_hook();
 
