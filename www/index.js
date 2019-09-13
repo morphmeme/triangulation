@@ -21,6 +21,10 @@ let draw_line = (x1, y1, x2, y2) => {
         .style("stroke", "rgb(255,0,0)") // move style later
         .style("stroke-width", 2);
 };
+
+let conv = (y) => {
+    return -y - window.innerHeight;
+};
 let connect_polygon = (x, y) => {
     if (points.length > 0) {
         // try make origin bottom left better
@@ -45,7 +49,6 @@ let undo_move = () => {
     }
     points.pop();
     points.pop();
-    console.log(points);
 };
 d3.select("body")
     .on("keydown", function() {
@@ -60,7 +63,7 @@ d3.select("body")
 let polygon_done = false;
 
 svg.on("click", () => {
-    console.log(points);
+
     if (d3.event.defaultPrevented) {
         return
     }
@@ -95,11 +98,8 @@ svg.on("click", () => {
             d3.event.preventDefault();
             connect_polygon(x, y);
             let poly = Polygon.from_slice(new Float32Array(points));
-            poly.ccw_sort();
-            tri_text.text("Number of triangulations: " + poly.nb_triangulations());
+                tri_text.text("Number of triangulations: " + poly.nb_triangulations());
             polygon_done = true;
         })
 
 });
-
-

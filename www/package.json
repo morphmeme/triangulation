@@ -8,7 +8,8 @@
   },
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -20,7 +21,7 @@
     "rust",
     "webpack"
   ],
-  "author": "Ashley Williams <ashley666ashley@gmail.com>",
+  "author": "Alex Feng <ashley666ashley@gmail.com>",
   "license": "(MIT OR Apache-2.0)",
   "bugs": {
     "url": "https://github.com/rustwasm/create-wasm-app/issues"

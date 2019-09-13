@@ -149,11 +149,6 @@ impl Polygon {
     pub fn nb_triangulations(&self) -> usize {
         let mut table = vec![vec![0; self.points.len()]; self.points.len()];
         let mut calculated = vec![vec![0; self.points.len()]; self.points.len()];
-        for i in 0..self.points.len() {
-            for j in 0..self.points.len() {
-                table[i][j] = 0;
-            }
-        }
 
         for i in 0..self.points.len() {
             for k in i+1..self.points.len() {
